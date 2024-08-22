@@ -1,0 +1,23 @@
+name: simple-test-hi-world
+base: core22
+version: '0.3'
+summary: A fun app that says hi
+description: |
+  This is a follow-up to the original 'hi' snap. It says hi and does a bit more depending on the (-) you put!!
+grade: devel
+confinement: strict
+license: mit
+contact: https://iliantsonev.wordpress.com
+
+
+parts:
+  hi2:
+    source: .
+    plugin: dump
+    organize:
+      hi2.sh: bin/hi2
+
+apps:
+  hi2:
+    command: bin/hi2
+
